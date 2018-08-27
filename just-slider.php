@@ -55,6 +55,14 @@ class Just_Slider {
 	public function __construct() {
 		$this->load_dependencies();
 		$this->set_locale();
+		$this->setup_hooks();
+	}
+
+	/**
+	 * Setup the admin panel hooks.
+	 */
+	public function setup_hooks() {
+		add_action( 'init', array( $this, 'register_cpt_just_slider' ) );
 	}
 
 	/**
@@ -62,7 +70,6 @@ class Just_Slider {
 	 */
 	private function load_dependencies() {
 		if ( is_admin() ) {
-			require_once JUST_SLIDER_PATH . 'includes/admin/ajax.php';
 			require_once JUST_SLIDER_PATH . 'includes/admin/class-just-slider-admin-panel.php';
 		} else {
 			require_once JUST_SLIDER_PATH . 'includes/front/class-just-slider-display.php';
@@ -164,6 +171,39 @@ class Just_Slider {
 		if ( strlen( $located ) ) {
 			load_template( $located, false );
 		}
+	}
+
+	/**
+	 * Register the post type.
+	 *
+	 * @return void
+	 */
+	static public function register_cpt_just_slider() {
+		$labels = array(
+			'name' => __( 'Just Sliders', 'twentyseventeen' ),
+			'singular_name' => __( 'Just Slider', 'twentyseventeen' ),
+		);
+		$args = array(
+			'label' => __( 'Just Sliders', 'twentyseventeen' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'publicly_queryable' => false,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'show_in_nav_menus' => false,
+			'exclude_from_search' => true,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'just_slider', 'with_front' => true ),
+			'query_var' => false,
+			'supports' => array( 'title' ),
+		);
+		register_post_type( 'just_slider', $args );
 	}
 
 }

@@ -4,3 +4,7 @@
  *
  * @package    Just_Slider
  */
+
+
+
+

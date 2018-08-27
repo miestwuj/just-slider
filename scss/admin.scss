@@ -1,0 +1,86 @@
+.jslider-slides-list-wrapper{
+    margin:0 auto;
+    margin-top:20px;
+    padding:25px;
+    padding-top:0px;
+    .jslider-slides-list-header{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        margin-bottom:20px;
+        align-items:baseline;
+        justify-content:center;
+        h2{
+            width:100%;
+            text-align:center;
+        }
+        label,
+        button{
+            width:33%;
+            text-align:center;
+            height:45px;
+        }
+        .jslider-sliders-save{
+            width:100%;
+            height:45px;
+            margin:15px 0px;
+        }
+    }
+    .jslider-slides-list{
+        margin-top:20px;
+        padding-top:10px;
+        counter-reset: slide-counter;
+        .jslider-slide{
+            padding:10px;
+            border:1px solid #ccc;
+            background:#eee;
+            margin-bottom:15px;
+            position:relative;
+            counter-increment: slide-counter;
+            &:before{
+                content:counter(slide-counter);
+                position:absolute;
+                top:0px;
+                left:0px;
+                padding:5px 10px;
+                background:#ddd;
+                font-weight:bold;
+                
+            }
+            .just-slider-textarea{
+                textarea{
+                    width:100%;
+                    height:150px;
+                    padding: 10px 10px;
+                    border: 1px solid #ccc;
+                }
+                margin-bottom:5px;
+            }
+            input{margin-left:10px;}
+            button{
+                float:right;
+            }
+        }
+    }
+
+}
+
+.jslide-slide-draggable{
+    float:right;
+}
+.jslide-slide-draggable:before{
+    content: "\f211";
+    font-family:dashicons;
+    font-size:18px;
+}
+
+.jslider-sliders-save{
+    width:100%;
+    height:45px;
+    margin:15px 0px;
+}
+
+.just-slider-image-upload{
+    text-align:center;
+    margin:25px 0;
+}
