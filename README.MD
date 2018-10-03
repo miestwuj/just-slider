@@ -43,9 +43,8 @@ function just_slider_script_parameters_filter( $params, $slider_id ){
 }
 // Filter the whole script code in case you need to.
 add_filter( 'just_slider_script', 'just_slider_script_filter' 10, 2 );
-function just_slider_script_filter( $params, $slider_id ){
-    $params['autoplay'] = false;
-    return $params;
+function just_slider_script_filter( $html, $slider_id ){
+    return $html;
 }
 ```
 
