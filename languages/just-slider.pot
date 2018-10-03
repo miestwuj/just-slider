@@ -13,70 +13,86 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/admin/class-just-slider-admin-panel.php:41
+#: includes/admin/class-just-slider-admin-panel.php:45
 msgid "Shortcode"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:44
+#: includes/admin/class-just-slider-admin-panel.php:48
 msgid "PHP function"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:81
+#: includes/admin/class-just-slider-admin-panel.php:85
 msgid "Slider"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:116
+#: includes/admin/class-just-slider-admin-panel.php:92
+msgid "Adddional classes"
+msgstr ""
+
+#: includes/admin/class-just-slider-admin-panel.php:127
 msgid "Add image"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:123
+#: includes/admin/class-just-slider-admin-panel.php:134
 msgid "Remove image"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:129
+#: includes/admin/class-just-slider-admin-panel.php:140
 msgid "Delete"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:149
+#: includes/admin/class-just-slider-admin-panel.php:160
 msgid "put your code here"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:176
+#: includes/admin/class-just-slider-admin-panel.php:187
 msgid "Add new slide"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:178
+#: includes/admin/class-just-slider-admin-panel.php:189
 msgid "Transition type"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:180
+#: includes/admin/class-just-slider-admin-panel.php:191
 msgid "Slide"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:181
+#: includes/admin/class-just-slider-admin-panel.php:192
 msgid "Fade"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:185
+#: includes/admin/class-just-slider-admin-panel.php:196
 msgid "Autoplay"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:187
+#: includes/admin/class-just-slider-admin-panel.php:198
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:188
+#: includes/admin/class-just-slider-admin-panel.php:199
 msgid "No"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:192
+#: includes/admin/class-just-slider-admin-panel.php:203
 msgid "Transition time (ms)"
 msgstr ""
 
-#: includes/admin/class-just-slider-admin-panel.php:196
+#: includes/admin/class-just-slider-admin-panel.php:207
 msgid "Height (px)"
 msgstr ""
 
 #: includes/admin/class-just-slider-admin-panel.php:232
+msgid "Those classes will make objects appear after x miliseconds."
+msgstr ""
+
+#: includes/admin/class-just-slider-admin-panel.php:233
+msgid "All examples use 500ms but you can change this by setting the number in class name"
+msgstr ""
+
+#: includes/admin/class-just-slider-admin-panel.php:234
+msgid "There are classes from 50 to 2500ms, every 50ms."
+msgstr ""
+
+#: includes/admin/class-just-slider-admin-panel.php:274
 msgid "Nonce incorrect!"
 msgstr ""

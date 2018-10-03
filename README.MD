@@ -12,7 +12,7 @@ There you will be able to manage sliders like any other post type:
 
 ![Doc image](img/doc2.jpg?raw=true)
 
-## Slider edition
+## Slider editor
 
 ![Doc image](img/doc3.jpg?raw=true)
 
@@ -51,7 +51,7 @@ function just_slider_script_filter( $html, $slider_id ){
 ## Dependencies
 * [slick](https://github.com/kenwheeler/slick/) - the last carousel you'll ever need
 
-#### License
+## License
 
 Copyright (c) 2017 Ken Wheeler
 
