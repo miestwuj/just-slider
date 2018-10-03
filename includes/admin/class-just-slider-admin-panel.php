@@ -38,10 +38,10 @@ class Just_Slider_Admin_Panel {
 	 */
 	public function admin_columns( $columns ) {
 		if ( ! isset( $columns['slider_shortcode'] ) ) {
-			$columns['slider_shortcode'] = esc_html__( 'Shortcode', 'just_slider' );
+			$columns['slider_shortcode'] = esc_html__( 'Shortcode', 'just-slider' );
 		}
 		if ( ! isset( $columns['slider_php'] ) ) {
-			$columns['slider_php'] = esc_html__( 'PHP function', 'just_slider' );
+			$columns['slider_php'] = esc_html__( 'PHP function', 'just-slider' );
 		}
 		return $columns;
 	}
@@ -78,7 +78,7 @@ class Just_Slider_Admin_Panel {
 		}
 		add_meta_box(
 			'just_slider_settings',
-			__( 'Slider', 'just_slider' ),
+			__( 'Slider', 'just-slider' ),
 			array( $this, 'render_just_slider_settings' ),
 			$post_type,
 			'normal'
@@ -113,20 +113,20 @@ class Just_Slider_Admin_Panel {
 			<div class="jslider-slide">
 				<div class="jslide-slide-draggable"></div>
 				<div class="just-slider-image-upload">
-					<a class="button button-secondary just-slider-add-image" href="#"><?php esc_html_e( 'Add image', 'just_slider' ); ?></a>
+					<a class="button button-secondary just-slider-add-image" href="#"><?php esc_html_e( 'Add image', 'just-slider' ); ?></a>
 
 					<div class="just-slider-image">
 						<?php if ( ! empty( $image ) ) :  ?>
 							<?php echo wp_get_attachment_image( $image ); ?>
 						<?php endif; ?>
 					</div>
-					<a class="button button-secondary just-slider-delete-image" href="#"><?php esc_html_e( 'Remove image', 'just_slider' ); ?></a>
+					<a class="button button-secondary just-slider-delete-image" href="#"><?php esc_html_e( 'Remove image', 'just-slider' ); ?></a>
 					<input class="just-slider-image-id" type="hidden" value="<?php echo $image ; ?>" />
 				</div>
 				<div class="just-slider-textarea">
 					<textarea class="jslider-slide-content"><?php echo ( $content );?></textarea>
 				</div>
-				<button class="jslider-sliders-remove"><?php echo esc_html__( 'Delete', 'just_slider' );?></button>
+				<button class="jslider-sliders-remove"><?php echo esc_html__( 'Delete', 'just-slider' );?></button>
 			</div>
 		<?php
 		$html = ob_get_clean();
@@ -146,7 +146,7 @@ class Just_Slider_Admin_Panel {
 			'height' => 600,
 			'slides' => array(
 				array(
-					'content' => esc_html__( 'put your code here', 'just_slider' ),
+					'content' => esc_html__( 'put your code here', 'just-slider' ),
 					'image' => '',
 				),
 			)
@@ -173,27 +173,27 @@ class Just_Slider_Admin_Panel {
 		?>
 			<div class="jslider-slides-list-wrapper">
 				<div class="jslider-slides-list-header">
-					<a class=" button jslider-sliders-add"><?php echo esc_html__( 'Add new slide', 'just_slider' );?></a>
+					<a class=" button jslider-sliders-add"><?php echo esc_html__( 'Add new slide', 'just-slider' );?></a>
 					<label>
-						<?php echo esc_html__( 'Transition type', 'just_slider' );?>
+						<?php echo esc_html__( 'Transition type', 'just-slider' );?>
 						<select class="jslider-transition-type jslider-slider-parameter">
-							<option value="slide" <?php selected( 'slide', $values['transitionType'], true);?>><?php echo esc_html__( 'Slide', 'just_slider' );?></option>
-							<option value="fade" <?php selected( 'fade', $values['transitionType'], true);?>><?php echo esc_html__( 'Fade', 'just_slider' );?></option>
+							<option value="slide" <?php selected( 'slide', $values['transitionType'], true);?>><?php echo esc_html__( 'Slide', 'just-slider' );?></option>
+							<option value="fade" <?php selected( 'fade', $values['transitionType'], true);?>><?php echo esc_html__( 'Fade', 'just-slider' );?></option>
 						</select>
 					</label>
 					<label>
-						<?php echo esc_html__( 'Autoplay', 'just_slider' );?>
+						<?php echo esc_html__( 'Autoplay', 'just-slider' );?>
 						<select class="jslider-autoplay jslider-slider-parameter">
-							<option value="yes" <?php selected( 'yes', $values['autoplay'], true);?>><?php echo esc_html__( 'Yes', 'just_slider' );?></option>
-							<option value="no" <?php selected( 'no', $values['autoplay'], true);?>><?php echo esc_html__( 'No', 'just_slider' );?></option>
+							<option value="yes" <?php selected( 'yes', $values['autoplay'], true);?>><?php echo esc_html__( 'Yes', 'just-slider' );?></option>
+							<option value="no" <?php selected( 'no', $values['autoplay'], true);?>><?php echo esc_html__( 'No', 'just-slider' );?></option>
 						</select>
 					</label>
 					<label>
-						<?php echo esc_html__( 'Transition time (ms)', 'just_slider' );?>
+						<?php echo esc_html__( 'Transition time (ms)', 'just-slider' );?>
 						<input type="number" class="jslider-transition-time jslider-slider-parameter" value="<?php echo esc_attr( $values['time'] );?>">
 					</label>
 					<label>
-						<?php echo esc_html__( 'Height (px)', 'just_slider' );?>
+						<?php echo esc_html__( 'Height (px)', 'just-slider' );?>
 						<input type="number" class="jslider-height jslider-slider-parameter" value="<?php echo esc_attr( $values['height'] );?>">
 					</label>
 				</div>
@@ -229,7 +229,7 @@ class Just_Slider_Admin_Panel {
 			return $post_id;
 		}
 		if ( ! check_admin_referer( 'just-slider-save-nonce', 'just-slider-save-nonce' ) ) {
-			wp_die( esc_html__( 'Nonce incorrect!', 'just_slider' ) );
+			wp_die( esc_html__( 'Nonce incorrect!', 'just-slider' ) );
 		}
 		$values = filter_input( INPUT_POST, 'just-slider-settings', FILTER_SANITIZE_STRING );
 		$values = html_entity_decode( $values );
