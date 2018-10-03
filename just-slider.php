@@ -120,7 +120,7 @@ class Just_Slider {
 		if ( is_admin() ) {
 			new Just_Slider_Admin_Panel();
 		} else {
-			// mtodo register shortcode here!
+			new Just_Slider_Shortcode();
 		}
 	}
 
@@ -194,11 +194,11 @@ class Just_Slider {
 	 */
 	static public function register_cpt_just_slider() {
 		$labels = array(
-			'name' => __( 'Just Sliders', 'twentyseventeen' ),
-			'singular_name' => __( 'Just Slider', 'twentyseventeen' ),
+			'name' => __( 'Just Sliders', 'just-silder' ),
+			'singular_name' => __( 'Just Slider', 'just-silder' ),
 		);
 		$args = array(
-			'label' => __( 'Just Sliders', 'twentyseventeen' ),
+			'label' => __( 'Just Sliders', 'just-silder' ),
 			'labels' => $labels,
 			'description' => '',
 			'public' => true,

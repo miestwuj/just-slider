@@ -25,9 +25,12 @@ global $jslider_height;
 			<li class="jslider-item jslider-item-<?php echo esc_attr( $index );?>">
 				<?php if ( $slide['image'] ) :
 					$attachement_data = wp_get_attachment_image_src( $slide['image'], 'full' );
-					error_log( print_r( $attachement_data, true ) );
 				?>
-				<img src="<?php echo esc_url( $attachement_data[0] ); ?>">
+				<style>
+					.jslider-item-<?php echo esc_attr( $index );?>{
+						background-image:url(<?php echo esc_url( $attachement_data[0] ); ?>);
+					}
+				</style>
 				<div class="jslider-content"><?php echo $slide['content'];?></div>
 				<?php endif;?>
 			</li>
