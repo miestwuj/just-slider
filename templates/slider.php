@@ -31,7 +31,7 @@ global $jslider_height;
 						background-image:url(<?php echo esc_url( $attachement_data[0] ); ?>);
 					}
 				</style>
-				<div class="jslider-content"><?php echo $slide['content'];?></div>
+				<div class="jslider-content"><?php echo urldecode( $slide['content'] );?></div>
 				<?php endif;?>
 			</li>
 		<?php endforeach;?>

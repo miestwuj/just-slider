@@ -53,7 +53,13 @@ class Just_Slider_Display {
 		if ( ! $jslider_slides || 0 === count( $jslider_slides ) ) {
 			return;
 		}
+		ob_start();
 		Just_Slider::get_instance()->get_template_part( 'slider' );
+		$html = ob_get_clean();
+		/**
+		 * Filter slider HTML.
+		 */
+		echo apply_filters( 'just_slider_html', $html, $this->id );
 		$this->render_script( );
 	}
 
@@ -61,6 +67,23 @@ class Just_Slider_Display {
 	 * Render script.
 	 */
 	private function render_script() {
+		$params = array(
+			'infinite' => true,
+			'speed' => 500,
+			'adaptiveHeight' => true,
+		);
+		if( 'yes' === $this->slider_data['autoplay'] ){
+			$params['autoplay'] = true;
+			$params['autoplaySpeed'] = $this->slider_data['time'];
+		}
+		if( 'fade' === $this->slider_data['transitionType'] ) {
+			$params['fade'] = true;
+		}
+		/**
+		 * Filter slick script params.
+		 */
+		$params = apply_filters( 'just_slider_script_parameters', $params, $this->id );
+		ob_start();
 		?>
 			<script>
 				(function ($) {
@@ -68,23 +91,15 @@ class Just_Slider_Display {
 				'use strict';
 
 				$(document).ready(function(){
-					$('.jslider-<?php echo esc_attr( $this->id );?> .jslider-items').slick({
-						<?php if( 'yes' === $this->slider_data['autoplay'] ) :?>
-						autoplay: true,
-						autoplaySpeed: <?php echo esc_attr( $this->slider_data['time'] );?>,
-						<?php endif;?>
-						<?php if( 'fade' === $this->slider_data['transitionType'] ) :?>
-						fade: true,
-						<?php endif;?>
-						  infinite: true,
-						  speed: 500,
-						  adaptiveHeight: true,
-					});
+					var atts = <?php echo json_encode( $params ); ?>;
+					$('.jslider-<?php echo esc_attr( $this->id );?> .jslider-items').slick(atts);
 				});
 
 				})(jQuery);
 			</script>
 		<?php
+		$html = ob_get_clean();
+		echo apply_filters( 'just_slider_script', $html, $this->id );
 	}
 
 }

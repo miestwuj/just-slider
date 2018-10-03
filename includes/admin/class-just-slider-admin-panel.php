@@ -124,7 +124,7 @@ class Just_Slider_Admin_Panel {
 					<input class="just-slider-image-id" type="hidden" value="<?php echo $image ; ?>" />
 				</div>
 				<div class="just-slider-textarea">
-					<textarea class="jslider-slide-content"><?php echo ( $content );?></textarea>
+					<textarea class="jslider-slide-content"><?php echo urldecode( $content );?></textarea>
 				</div>
 				<button class="jslider-sliders-remove"><?php echo esc_html__( 'Delete', 'just-slider' );?></button>
 			</div>

@@ -45,7 +45,12 @@
                 padding:5px 10px;
                 background:#ddd;
                 font-weight:bold;
-                
+
+            }
+            &:after{
+                content:"";
+                display:block;
+                clear:both;
             }
             .just-slider-textarea{
                 textarea{

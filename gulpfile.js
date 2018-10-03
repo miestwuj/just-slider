@@ -40,3 +40,6 @@ gulp.task('pot', function () {
 gulp.task('default', ['css'], function() {
 	gulp.watch( './scss/**/*', ['css'] );
 });
+
+gulp.task('build', ['css','pot','js'], function() {
+});
