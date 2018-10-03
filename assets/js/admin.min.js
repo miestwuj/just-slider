@@ -42,10 +42,11 @@
         $('.jslider-slides-list .jslider-slide').each(function(index, that){
             var slide = {};
             slide.content = $('textarea', that).val();
+            slide.content = encodeURIComponent( slide.content );
             slide.image = $('.just-slider-image-id', that).val();
             values.slides[index] = slide;
         });
-        values = unescape( JSON.stringify(values) );
+        values = JSON.stringify(values);
         $('#just-slider-settings').val(values);
     };
     var bindSlide = function($scope){

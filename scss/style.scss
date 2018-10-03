@@ -60,24 +60,28 @@
             animation: jslider-show-opacity 500ms;
             animation-delay: #{$i*50}ms;
             animation-fill-mode: forwards;
+            animation-timing-function: ease;
         }
         .jslider-from-top-#{$i*50}ms{
             opacity:0;
             animation: jslider-show-from-top 500ms;
             animation-delay: #{$i*50}ms;
             animation-fill-mode: forwards;
+            animation-timing-function: ease;
         }
         .jslider-from-left-#{$i*50}ms{
             opacity:0;
             animation: jslider-show-from-left 500ms;
             animation-delay: #{$i*50}ms;
             animation-fill-mode: forwards;
+            animation-timing-function: ease;
         }
         .jslider-scale-#{$i*50}ms{
             opacity:0;
             animation:  jslider-show-scale 500ms;
             animation-delay: #{$i*50}ms;
             animation-fill-mode: forwards;
+            animation-timing-function: ease;
         }
     }
 }

@@ -83,6 +83,13 @@ class Just_Slider_Admin_Panel {
 			$post_type,
 			'normal'
 		);
+		add_meta_box(
+			'just_slider_classes',
+			__( 'Adddional classes', 'just-slider' ),
+			array( $this, 'render_just_slider_classes' ),
+			$post_type,
+			'side'
+		);
 	}
 
 	/**
@@ -207,6 +214,37 @@ class Just_Slider_Admin_Panel {
 			</div>
 			<input id="just-slider-settings" name="just-slider-settings" type="hidden" value="">
 			<?php wp_nonce_field( 'just-slider-save-nonce', 'just-slider-save-nonce' );?>
+		<?php
+	}
+
+	/**
+	 * Render the admin panel.
+	 *
+ 	 * @param WP_Post $post         Post object.
+	 */
+	public function render_just_slider_classes( $post ) {
+		?>
+		<div class="just-slider-classes-desc">
+			<p><?php echo esc_html__( 'Those classes will make objects appear after x miliseconds.', 'just-slider' );?></p>
+			<p><?php echo esc_html__( 'All examples use 500ms but you can change this by setting the number in class name', 'just-slider' );?></p>
+			<p><?php echo esc_html__( 'There are classes from 50 to 2500ms, every 50ms.', 'just-slider' );?></p>
+		</div>
+		<div class="just-slider-classes-class">
+			<input class="just-slider-class" onclick="this.focus(); this.select()" type="test" value=".jslider-opacity-500ms">
+			<div class="just-slider-class-desc">Fade in</div>
+		</div>
+		<div class="just-slider-classes-class">
+			<input class="just-slider-class" onclick="this.focus(); this.select()" type="test" value=".jslider-from-top-500ms">
+			<div class="just-slider-class-desc">Scroll in from the top</div>
+		</div>
+		<div class="just-slider-classes-class">
+			<input class="just-slider-class" onclick="this.focus(); this.select()" type="test" value=".jslider-from-left--500ms">
+			<div class="just-slider-class-desc">Scroll in from the left</div>
+		</div>
+		<div class="just-slider-classes-class">
+			<input class="just-slider-class" onclick="this.focus(); this.select()" type="test" value=".jslider-scale-500ms">
+			<div class="just-slider-class-desc">Scale from 0% to 100%</div>
+		</div>
 		<?php
 	}
 
