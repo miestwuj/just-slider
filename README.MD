@@ -53,8 +53,6 @@ function just_slider_script_filter( $html, $slider_id ){
 
 ## License
 
-Copyright (c) 2017 Ken Wheeler
+Copyright (c) 2018 Mateusz Dorywalski
 
 Licensed under the MIT license.
-
-Free as in Bacon.
