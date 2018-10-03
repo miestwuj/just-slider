@@ -8,19 +8,19 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://github.com/miestwuj
+ * @link             https://github.com/miestwuj/just-slider
  * @since             1.0.0
  * @package           Just_Slider
  *
  * @wordpress-plugin
  * Plugin Name:       Just Slider
- * Plugin URI:        https://github.com/thepluginurl/
+ * Plugin URI:        https://github.com/miestwuj/just-slider
  * Description:       When you just want a slider and you want to avoid a revolution ;)
  * Version:           1.0.0
  * Author:            Mateusz Dorywalski
  * Author URI:        https://github.com/miestwuj
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           MIT
+ * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       just-slider
  * Domain Path:       /languages
  */

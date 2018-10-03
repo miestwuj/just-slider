@@ -4,6 +4,10 @@
  *
  * @package    Just_Slider
  */
+// Prevent direct script access.
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'No direct script access allowed' );
+}
 
 /**
  * Display the slider.
