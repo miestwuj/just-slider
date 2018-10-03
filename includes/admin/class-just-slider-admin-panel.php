@@ -113,14 +113,14 @@ class Just_Slider_Admin_Panel {
 			<div class="jslider-slide">
 				<div class="jslide-slide-draggable"></div>
 				<div class="just-slider-image-upload">
-					<a class="button button-secondary just-slider-add-image" href="#"><?php esc_html_e( 'Add image', 'just-slider' ); ?></a>
+					<a class="button button-secondary just-slider-add-image" href="#"><?php esc_html_e( 'Add image', 'just_slider' ); ?></a>
 
 					<div class="just-slider-image">
 						<?php if ( ! empty( $image ) ) :  ?>
 							<?php echo wp_get_attachment_image( $image ); ?>
 						<?php endif; ?>
 					</div>
-					<a class="button button-secondary just-slider-delete-image" href="#"><?php esc_html_e( 'Remove image', 'just-slider' ); ?></a>
+					<a class="button button-secondary just-slider-delete-image" href="#"><?php esc_html_e( 'Remove image', 'just_slider' ); ?></a>
 					<input class="just-slider-image-id" type="hidden" value="<?php echo $image ; ?>" />
 				</div>
 				<div class="just-slider-textarea">
