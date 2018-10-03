@@ -10,7 +10,7 @@ var rename 			= require("gulp-rename"),
     gulpif			= require('gulp-if');
 
 gulp.task('css', function(){
-	return gulp.src('./scss/**/*')
+	return gulp.src('./scss/**/*.scss')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions'],
@@ -38,8 +38,13 @@ gulp.task('pot', function () {
 });
 
 gulp.task('default', ['css'], function() {
-	gulp.watch( './scss/**/*', ['css'] );
+	gulp.watch( './scss/**/*.scss', ['css'] );
+	gulp.watch( './assets/src/*.js', ['js'] );
 });
 
-gulp.task('build', ['css','pot','js'], function() {
+gulp.task('prod', function() {
+	global.prod = true;
+});
+
+gulp.task('build', ['prod', 'css','pot','js'], function() {
 });
