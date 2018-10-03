@@ -39,7 +39,7 @@ class Just_Slider_Admin_Panel {
 		}
 		add_meta_box(
 			'just_slider_settings',
-			__( 'Slider', 'bimber' ),
+			__( 'Slider' ),
 			array( $this, 'render_just_slider_settings' ),
 			$post_type,
 			'normal'
@@ -58,7 +58,7 @@ class Just_Slider_Admin_Panel {
 			wp_enqueue_script( 'just-slider-admin', JUST_SLIDER_URL . 'assets/js/admin.min.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable' ), false, true );
 		}
 		$config = array(
-			'template' =>	 $this->get_slide_markup( 'put your code here', 1000, '' ),
+			'template' =>	 $this->get_slide_markup( 'put your code here', '' ),
 		);
 		wp_localize_script( 'just-slider-admin','justsliderConfig', wp_json_encode( $config ) );
 	}
@@ -67,10 +67,9 @@ class Just_Slider_Admin_Panel {
 	 * Get markup for single slide
 	 *
 	 * @param  string $content   Slide content.
-	 * @param  int    $time		 Slide time.
 	 * @return string
 	 */
-	private function get_slide_markup( $content, $time, $image ) {
+	private function get_slide_markup( $content, $image ) {
 		ob_start();?>
 			<div class="jslider-slide">
 				<div class="jslide-slide-draggable"></div>
@@ -88,10 +87,6 @@ class Just_Slider_Admin_Panel {
 				<div class="just-slider-textarea">
 					<textarea class="jslider-slide-content"><?php echo ( $content );?></textarea>
 				</div>
-				<label>
-					<?php echo esc_html__( 'Transition time (ms)' );?>
-					<input type="number" class="jslider-transition-time" value="<?php echo esc_attr( $time );?>">
-				</label>
 				<button class="jslider-sliders-remove"><?php echo esc_html__( 'Delete' );?></button>
 			</div>
 		<?php
@@ -108,10 +103,11 @@ class Just_Slider_Admin_Panel {
 		return array(
 			'transitionType' => 'slide',
 			'autoplay' => 'yes',
+			'time' => 3000,
+			'height' => 600,
 			'slides' => array(
 				array(
 					'content' => esc_html__( 'put your code here' ),
-					'time' => 3000,
 					'image' => '',
 				),
 			)
@@ -141,23 +137,31 @@ class Just_Slider_Admin_Panel {
 					<a class=" button jslider-sliders-add"><?php echo esc_html__( 'Add new slide' );?></a>
 					<label>
 						<?php echo esc_html__( 'Transition type' );?>
-						<select class="jslider-transition-type">
+						<select class="jslider-transition-type jslider-slider-parameter">
 							<option value="slide" <?php selected( 'slide', $values['transitionType'], true);?>><?php echo esc_html__( 'Slide' );?></option>
 							<option value="fade" <?php selected( 'fade', $values['transitionType'], true);?>><?php echo esc_html__( 'Fade' );?></option>
 						</select>
 					</label>
 					<label>
 						<?php echo esc_html__( 'Autoplay' );?>
-						<select class="jslider-autoplay">
+						<select class="jslider-autoplay jslider-slider-parameter">
 							<option value="yes" <?php selected( 'yes', $values['autoplay'], true);?>><?php echo esc_html__( 'Yes' );?></option>
 							<option value="no" <?php selected( 'no', $values['autoplay'], true);?>><?php echo esc_html__( 'No' );?></option>
 						</select>
+					</label>
+					<label>
+						<?php echo esc_html__( 'Transition time (ms)' );?>
+						<input type="number" class="jslider-transition-time jslider-slider-parameter" value="<?php echo esc_attr( $values['time'] );?>">
+					</label>
+					<label>
+						<?php echo esc_html__( 'Height (px)' );?>
+						<input type="number" class="jslider-height jslider-slider-parameter" value="<?php echo esc_attr( $values['height'] );?>">
 					</label>
 				</div>
 				<div class="jslider-slides-list">
 					<?php
 						foreach ( $values['slides'] as $slide ) {
-							echo $this->get_slide_markup( $slide['content'], $slide['time'], $slide['image'] );
+							echo $this->get_slide_markup( $slide['content'], $slide['image'] );
 						}
 					?>
 				</div>

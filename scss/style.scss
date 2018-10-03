@@ -1,0 +1,29 @@
+.jslider-wrapper{
+    max-width:100%;
+    overflow:hidden;
+}
+.jslider-item{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    img{
+        width:100%;
+        min-height:100%;
+        position: absolute;
+        top:-100%; left:0; right: 0; bottom:-100%;
+        margin: auto;
+    }
+    .jslider-content{
+        position:absolute;
+        text-align:center;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        width:100%;
+        height:100%;
+        top:0px;
+        left:0px;
+    }
+}

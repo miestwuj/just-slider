@@ -36,3 +36,7 @@ gulp.task('pot', function () {
         } ))
         .pipe(gulp.dest('./languages/just-slider.pot'));
 });
+
+gulp.task('default', ['css'], function() {
+	gulp.watch( './scss/**/*', ['css'] );
+});

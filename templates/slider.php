@@ -9,10 +9,28 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'No direct script access allowed' );
 }
+global $jslider_slides;
+global $jslider_id;
+global $jslider_height;
 ?>
-
-<div class="jslider-wrapper">
+<style>
+	.jslider-<?php echo esc_attr( $jslider_id );?>,
+	.jslider-<?php echo esc_attr( $jslider_id );?> .jslider-item{
+		height:<?php echo esc_attr( $jslider_height );?>px;
+	}
+</style>
+<div class="jslider-wrapper jslider-<?php echo esc_attr( $jslider_id );?>">
 	<ul class="jslider-items">
-		<li class="jslider-item"></li>
+		<?php foreach ( $jslider_slides as $index => $slide ) : ?>
+			<li class="jslider-item jslider-item-<?php echo esc_attr( $index );?>">
+				<?php if ( $slide['image'] ) :
+					$attachement_data = wp_get_attachment_image_src( $slide['image'], 'full' );
+					error_log( print_r( $attachement_data, true ) );
+				?>
+				<img src="<?php echo esc_url( $attachement_data[0] ); ?>">
+				<div class="jslider-content"><?php echo $slide['content'];?></div>
+				<?php endif;?>
+			</li>
+		<?php endforeach;?>
 	</ul>
 </div>

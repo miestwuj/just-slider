@@ -11,5 +11,5 @@
  * @param int $slider_id  The slug of the slider.
  */
 function just_slider( $slider_id ) {
-	$instance = new Just_Slider_Display();
+	$instance = new Just_Slider_Display( $slider_id );
 }

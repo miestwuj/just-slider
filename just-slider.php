@@ -62,7 +62,22 @@ class Just_Slider {
 	 * Setup the admin panel hooks.
 	 */
 	public function setup_hooks() {
+		if ( ! is_admin() ) {
+			add_action( 'wp_enqueue_scripts', array( $this, 'sload_frontend_assets' ) );
+		}
 		add_action( 'init', array( $this, 'register_cpt_just_slider' ) );
+	}
+
+	/**
+	 * Load frontend CSS.
+	 *
+	 * @return void
+	 */
+	public function sload_frontend_assets(){
+		wp_enqueue_style( 'just-slider', JUST_SLIDER_URL . 'assets/style.min.css', array(), Just_Slider::get_version(), 'screen' );
+		wp_enqueue_style( 'slick', JUST_SLIDER_URL . 'assets/slick.min.css', array(), Just_Slider::get_version(), 'screen' );
+		wp_enqueue_style( 'slick-theme', JUST_SLIDER_URL . 'assets/slick-theme.min.css', array(), Just_Slider::get_version(), 'screen' );
+		wp_enqueue_script( 'just-slider', JUST_SLIDER_URL . 'assets/js/vendor/slick.min.js', array( 'jquery' ) );
 	}
 
 	/**
@@ -105,7 +120,6 @@ class Just_Slider {
 		if ( is_admin() ) {
 			new Just_Slider_Admin_Panel();
 		} else {
-			new Just_Slider_Display();
 			// mtodo register shortcode here!
 		}
 	}
