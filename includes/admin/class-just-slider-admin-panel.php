@@ -154,6 +154,7 @@ class Just_Slider_Admin_Panel {
 			'transitionType' => 'slide',
 			'autoplay' => 'yes',
 			'time' => 3000,
+			'scaling' => 'crop',
 			'height' => 600,
 			'slides' => array(
 				array(
@@ -202,6 +203,13 @@ class Just_Slider_Admin_Panel {
 					<label>
 						<?php echo esc_html__( 'Transition time (ms)', 'just-slider' );?>
 						<input type="number" class="jslider-transition-time jslider-slider-parameter" value="<?php echo esc_attr( $values['time'] );?>">
+					</label>
+					<label>
+						<?php echo esc_html__( 'Scaling', 'just-slider' );?>
+						<select class="jslider-scaling jslider-slider-parameter">
+							<option value="crop" <?php selected( 'crop', $values['scaling'], true);?>><?php echo esc_html__( 'Crop', 'just-slider' );?></option>
+							<option value="proportional" <?php selected( 'proportional', $values['scaling'], true);?>><?php echo esc_html__( 'Proportional', 'just-slider' );?></option>
+						</select>
 					</label>
 					<label>
 						<?php echo esc_html__( 'Height (px)', 'just-slider' );?>

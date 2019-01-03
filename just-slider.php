@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link             https://github.com/miestwuj/just-slider
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Just_Slider
  *
  * @wordpress-plugin
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * CONSTANTS.
  */
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'JUST_SLIDER_VERSION', '1.1.0' );
 define( 'JUST_SLIDER_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 define( 'JUST_SLIDER_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
@@ -140,7 +140,7 @@ class Just_Slider {
 	 * @return    string    The version number of the plugin.
 	 */
 	static public function get_version() {
-		return PLUGIN_NAME_VERSION;
+		return JUST_SLIDER_VERSION;
 	}
 
 	/**

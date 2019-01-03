@@ -36,6 +36,12 @@
         var values = {};
         values.transitionType = $('.jslider-transition-type').val();
         values.autoplay = $('.jslider-autoplay').val();
+        values.scaling = $('.jslider-scaling').val();
+        if(values.scaling === 'crop') {
+            $('.jslider-height').closest('label').css('visibility','visible');
+        } else {
+            $('.jslider-height').closest('label').css('visibility','hidden');
+        }
         values.time = $('.jslider-transition-time').val();
         values.height = $('.jslider-height').val();
         values.slides = {};

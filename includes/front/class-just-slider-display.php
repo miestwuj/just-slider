@@ -58,7 +58,11 @@ class Just_Slider_Display {
 			return;
 		}
 		ob_start();
-		Just_Slider::get_instance()->get_template_part( 'slider' );
+		if ( 'crop' === $this->slider_data['scaling'] ) {
+			Just_Slider::get_instance()->get_template_part( 'slider' );
+		} else {
+			Just_Slider::get_instance()->get_template_part( 'slider-proportional' );
+		}
 		$html = ob_get_clean();
 		/**
 		 * Filter slider HTML.
