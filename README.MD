@@ -48,6 +48,10 @@ function just_slider_script_filter( $html, $slider_id ){
 }
 ```
 
+## Version history
+**1.1.0**
+NEW - proportional or crop scaling
+
 ## Dependencies
 * [slick](https://github.com/kenwheeler/slick/) - the last carousel you'll ever need
 
